@@ -3,7 +3,7 @@ Project on Banking management System for both customers and employees
 
 C++ mini project
 
-This project is developed and compiled with DEV C++ IDE using object oriented concept to create and manage bank account of customers and also generates employees salary reports with many more features.
+This project is developed and compiled with DEV C++ IDE using object oriented concept to create and manage bank account of customers and also generates employees salary reports with some other features.
 
 **You can find me on LinkedIn for more info** : 
 
