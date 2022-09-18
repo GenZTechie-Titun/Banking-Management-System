@@ -1,4 +1,4 @@
-# Banking-Management-System
+# Banking-Management-System using cpp
 Project on Banking management System for both customers and employees
 
 C++ mini project
