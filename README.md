@@ -19,17 +19,22 @@ https://www.paypal.com/paypalme/paytosambit
 2. Employee Records Section
 
 After giving choice,
+
+**Find out user id and password in Credentials file**
+
 1. Customer Banking Login : 
    
-   user ID  : cuser
+   user ID  : *****
    
-   password : cpass
+   password : *****
 
 2. Employee Records Section :
    
-   user ID  : euser
+   user ID  : *****
    
-   password : epass
+   password : *****
+
+**Find out user id and password in Credentials file**
   
 **Functions used in customer banking login**
 1. Add new bank account
