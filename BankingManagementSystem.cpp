@@ -885,20 +885,19 @@ void Banking::salary()
             cout<<"\nEnter Month from (1-12) to generate salary report: ";
             cin>>month;
             if(month==2){
-        	  	no_of_days=28;
+          	no_of_days=28;
     	       	cout<<"\nEnter number of working days (0-28): ";
-	           	cin>>working_days;
-			}else if(month==4||month==6||month==9||month==11){
-				no_of_days=30;
-				cout<<"\nEnter number of working days (0-30): ";
+         	cin>>working_days;
+		}else if(month==4||month==6||month==9||month==11){
+		no_of_days=30;
+		cout<<"\nEnter number of working days (0-30): ";
             	cin>>working_days;
-			}else{
-			no_of_days=31;
-			cout<<"\nEnter number of working days (0-31): ";
-            cin>>working_days;
-        	}
-			//cout<<"\nEnter number of working days: ";
-            //cin>>working_days;
+		}
+		else{
+		no_of_days=31;
+		cout<<"\nEnter number of working days (0-31): ";
+            	cin>>working_days;
+            }
             da=bs*0.05;
             cout<<"\nDearness Allowance(5%):\t\t Rs. "<<da;
             hra=bs*0.10;
