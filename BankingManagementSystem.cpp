@@ -16,7 +16,7 @@ class Banking
 		int fd_no,month;
 		double fd_amt,rate,m_amt,interest;
 		int emid;
-    	char ename[20],egen[10],ecno[15],edob[15],ebg[5],ed[10],email[25];
+    		char ename[20],egen[10],ecno[15],edob[15],ebg[5],ed[10],email[25];
 	public:
 		void add();
 		void search();
@@ -44,7 +44,7 @@ void Banking::add()
     system("cls");
     cout<<"\t\t\t===================NEW BANK ACCOUNT DETAILS====================\n\n";
     cout<<"\t\t\t\t\t\t";
-	cout<<" Date- "<<__DATE__<<"\t"<<" Time- "<<__TIME__<<"\n\n";
+    cout<<" Date- "<<__DATE__<<"\t"<<" Time- "<<__TIME__<<"\n\n";
     ofstream ofs("bank.txt",ios::app);
     cout<<"\n1- Enter Applicant Number: ";
     cin>>app_no;
@@ -52,7 +52,7 @@ void Banking::add()
     cin>>act_no;
     cout<<"\n3- Enter Account Holder Name: ";
     fflush(stdin);
-	gets(name);
+    gets(name);
     cout<<"\n4- Enter Father's Name: ";
     gets(fname);
     cout<<"\n5- Enter Nominee Name: ";
@@ -61,8 +61,8 @@ void Banking::add()
     gets(adhr);
     cout<<"\n7- Enter PAN Number: ";
     gets(pan);
-	cout<<"\n8- Account Type(Savings/Current): ";
-	gets(atype);
+    cout<<"\n8- Account Type(Savings/Current): ";
+    gets(atype);
     cout<<"\n9- Date of Birth: ";
     gets(dob);
     cout<<"\n10- Gender: ";
@@ -78,12 +78,12 @@ void Banking::add()
     cout<<"\n15- Enter District: ";
     gets(dist);
     cout<<"\n16- Enter Pincode: ";
-	gets(pin);
+    gets(pin);
     cout<<"\n17- Enter Occupation: ";
     gets(o);
-	cout<<"\n    Enter Initial Amount: Rs. ";	
-	cin>>in_amt;
-	net_amt=in_amt;
+    cout<<"\n    Enter Initial Amount: Rs. ";	
+    cin>>in_amt;
+    net_amt=in_amt;
     ofs.write((char *)&b,sizeof(Banking));
     cout<<"\n\nCongratulations!! \nAccount opened Successfully....";
     ofs.close();
@@ -94,7 +94,7 @@ void Banking::search()
 	int ch_1,act_no1,flag=0; 
 	system("cls");
 	cout<<"\t\t\t====================SEARCH RECORD SECTION=====================\n\n";
-    cout<<"\t\t\t\t\t\t";
+        cout<<"\t\t\t\t\t\t";
 	cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
 	ifstream ifs("bank.txt");
 	if(!ifs)
@@ -103,9 +103,9 @@ void Banking::search()
 		getch();
 		exit(0);
 	}
-		cout<<"\nSearch using Account Number\n\n";
-		cout<<"\nEnter Account Number: ";
-		cin>>act_no1;
+			cout<<"\nSearch using Account Number\n\n";
+			cout<<"\nEnter Account Number: ";
+			cin>>act_no1;
 		while(ifs.read((char*)&b,sizeof(Banking)))
 		{
 			if(act_no==act_no1)
@@ -140,7 +140,7 @@ void Banking::display()
 {
 	system("cls");
 	cout<<"\t\t\t=====================DISPLAY ALL CUSTOMER DETAILS=====================\n\n";
-    cout<<"\t\t\t\t\t\t\t";
+        cout<<"\t\t\t\t\t\t\t";
 	cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
 	ifstream ifs("bank.txt");
 	if(!ifs)
@@ -151,9 +151,9 @@ void Banking::display()
 	}
 	while(ifs.read((char*)&b,sizeof(Banking)))
 	{
-	    cout<<"\n------------------------------------";
-	    cout<<"\nApplicant Number:\t\t\t"<<app_no;
-	    cout<<"\nAccount Number:\t\t\t\t"<<act_no;
+	        cout<<"\n------------------------------------";
+	        cout<<"\nApplicant Number:\t\t\t"<<app_no;
+	        cout<<"\nAccount Number:\t\t\t\t"<<act_no;
 		cout<<"\nAccount Holder Name:\t\t\t"<<name;
 		cout<<"\nFather's Name:\t\t\t\t"<<fname;
 		cout<<"\nNominee Name:\t\t\t\t"<<nom;			
@@ -180,7 +180,7 @@ void Banking::modify()
 	system("cls");
 	int act_no2,ch_2,flag=0;
 	cout<<"\t\t\t=====================ACCOUNT MODIFICATION SECTION=====================\n\n";
-    cout<<"\t\t\t\t\t\t\t";
+        cout<<"\t\t\t\t\t\t\t";
 	cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
 	ofstream ofs("temp.txt");
 	ifstream ifs("bank.txt");
@@ -219,11 +219,11 @@ void Banking::modify()
 				fflush(stdin);
 				switch(ch_2)
 				{
-					case 1: cout<<"\nEnter new Account Number: ";
+			case 1: cout<<"\nEnter new Account Number: ";
              	    	   	cin>>act_no;
              	          	break;
              		case 2: cout<<"\nModify Account Holder Name: ";
-							gets(name);
+				gets(name);
 	            	        break;
             		case 3: cout<<"\nModify Father's Name: ";
                         	gets(fname);
@@ -236,8 +236,8 @@ void Banking::modify()
                         	break;
              		case 6: cout<<"\nModify PAN Number: ";
                        		gets(pan);
-							break; 
-        			case 7: cout<<"\nChange Account Type(Savings/Current): ";
+				break; 
+        		case 7: cout<<"\nChange Account Type(Savings/Current): ";
 	                    	gets(atype);
 	                    	break;
             		case 8: cout<<"\nModify Date of Birth: ";
@@ -246,29 +246,29 @@ void Banking::modify()
                 	case 9: cout<<"\nChange Gender: ";
                         	gets(gen);
                         	break;
-                	case 10:cout<<"\nModify Contact Number: ";
+                       case 10: cout<<"\nModify Contact Number: ";
                         	gets(cn);
                         	break;
-              		case 11:cout<<"\nModify Email ID: ";
+              	       case 11: cout<<"\nModify Email ID: ";
                         	gets(eid);
                         	break;
-              		case 12:cout<<"\nEnter new Address: ";
+              	       case 12: cout<<"\nEnter new Address: ";
                         	gets(ads);
                         	break;
-            		case 13:cout<<"\nEnter new City: ";
-                    	    gets(city); 
+            	       case 13: cout<<"\nEnter new City: ";
+                    	        gets(city); 
                         	break;
-                	case 14:cout<<"\nEnter new District: ";
+                       case 14: cout<<"\nEnter new District: ";
                         	gets(dist);
                         	break;
-            	    case 15:cout<<"\nEnter new Pincode: ";
+            	       case 15: cout<<"\nEnter new Pincode: ";
 	                    	gets(pin);
 	                    	break;
-              		case 16:cout<<"\nModify Occupation: ";
+              	       case 16: cout<<"\nModify Occupation: ";
                         	gets(o);
                         	break;
-              		default:cout<<"\nInvalid Choice";
-                			exit(0);
+              	       default: cout<<"\nInvalid Choice";
+                		exit(0);
 				}
 				ofs.write((char *)&b,sizeof(Banking));
 			}
@@ -301,14 +301,14 @@ void Banking::trans()
 	cin>>ch_3;	
 	switch(ch_3)
 	{
-		case 1:	 withdrawal();
-				 break;
-		case 2:  deposit();
-				 break;
-		case 3:  bal_enq();
-				 break;
-		default: cout<<"\nInvalid Choice..!!\n\nPress any key to exit....";
-				 exit(0);
+		case 1:	withdrawal();
+			break;
+		case 2: deposit();
+			break;
+		case 3: bal_enq();
+			break;
+	       default: cout<<"\nInvalid Choice..!!\n\nPress any key to exit....";
+			exit(0);
 	}
 }
 
@@ -368,7 +368,7 @@ void Banking::deposit()
 		int act_no4,depo=0,flag=0;
 		system("cls");
 		cout<<"\t\t\t=====================CASH DEPOSIT SECTION=====================\n\n";
-	    cout<<"\t\t\t\t\t\t";
+	    	cout<<"\t\t\t\t\t\t";
 		cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
 		ofstream ofs("temp.txt");
 		ifstream ifs("bank.txt");
@@ -414,7 +414,7 @@ void Banking::bal_enq()
 	int act_no5,flag=0;
 	system("cls");
 	cout<<"\t\t\t===================BALANCE ENQUIRY SECTION====================\n\n";
-    cout<<"\t\t\t\t\t\t";
+    	cout<<"\t\t\t\t\t\t";
 	cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
 	ofstream ofs("temp.txt");
 	ifstream ifs("bank.txt");
@@ -426,7 +426,6 @@ void Banking::bal_enq()
 	}
 		cout<<"\nEnter Customer Account Number: ";
 		cin>>act_no5;
-	
 		while(ifs.read((char*)&b,sizeof(Banking)))
 		{
 			if(act_no5==act_no)
@@ -450,7 +449,7 @@ void Banking::del()
 	system("cls");
 	int ch_4,act_no6,flag=0;
 	cout<<"\t\t\t====================ACCOUNT DELETION SECTION====================\n\n";
-    cout<<"\t\t\t\t\t\t";
+    	cout<<"\t\t\t\t\t\t";
 	cout<<" Date- "<<__DATE__<<" \t "<<" Time- "<<__TIME__<<"\n\n";
 	ofstream ofs("temp.txt");
 	ifstream ifs("bank.txt");
@@ -499,30 +498,30 @@ void Banking::fd()
 	cin>>ch_5;	
 	switch(ch_5)
 	{
-		case 1:	 fd_create();
-				 break;
-		case 2:  fd_display();
-				 break;
-		case 3:  fd_delete();
-				 break;
-		default: cout<<"\nInvalid Choice..!!\n\nPress any key to exit....";
-				 exit(0);
+		case 1:	fd_create();
+			break;
+		case 2: fd_display();
+			break;
+		case 3: fd_delete();
+			break;
+	       default: cout<<"\nInvalid Choice..!!\n\nPress any key to exit....";
+			exit(0);
 	}
 }
 
 void Banking::fd_create()
 {
-		char ch_6;
-		system("cls");
+	    char ch_6;
+	    system("cls");
 	    cout<<"\t\t\t==================NEW FIXED DEPOSIT ACCOUNT DETAILS====================\n\n";
 	    cout<<"\t\t\t\t\t\t\t";
-		cout<<" Date- "<<__DATE__<<"\t"<<" Time- "<<__TIME__<<"\n\n";
+	    cout<<" Date- "<<__DATE__<<"\t"<<" Time- "<<__TIME__<<"\n\n";
 	    ofstream ofs("fd.txt",ios::app);
 	    cout<<"\n1- Enter FD Account Number: ";
 	    cin>>fd_no;
 	    cout<<"\n2- Enter Account Holder Name: ";
 	    fflush(stdin);
-		gets(name);
+	    gets(name);
 	    cout<<"\n3- Enter Nominee Name: ";
 	    gets(nom);
 	    cout<<"\n4- Enter AADHAR Number: ";
@@ -532,8 +531,8 @@ void Banking::fd_create()
 	    cout<<"\n6- Account Type: ";
 	    cout<<"Fixed Deposit\n\n";
 	    cout<<"\t\t\t=========================FIXED DEPOSIT SCHEMES===========================\n\n";
-		cout<<"\n\t\t\tInterest  Rates\t\t\t\tTime Duration\n";
-		cout<<"\n\t\t\t\t4%\t\t\t\tLess than 12 months";
+	        cout<<"\n\t\t\tInterest  Rates\t\t\t\tTime Duration\n";
+	        cout<<"\n\t\t\t\t4%\t\t\t\tLess than 12 months";
 		cout<<"\n\t\t\t\t5%\t\t\t\tMore than 12 months but less than 24 months";
 		cout<<"\n\t\t\t\t6%\t\t\t\tMore than 24 months but less than 60 months";
 		cout<<"\n\t\t\t\t7.5%\t\t\t\tMore than than 60 months";
@@ -554,7 +553,7 @@ void Banking::fd_create()
 		rate=0.06;
 		}
 		else rate=0.075;
-    interest=fd_amt*rate;
+    	interest=fd_amt*rate;
 	m_amt=interest+fd_amt;
 	cout<<"\n\nInterest Rate: "<<rate*100<<"%";
 	cout<<"\n\n\nMaturity Amount= Rs. "<<m_amt;		
@@ -567,7 +566,7 @@ void Banking::fd_display()
 {
 	system("cls");
 	cout<<"\t\t\t=====================DISPLAY ALL FD ACCOUNT HOLDERS=====================\n\n";
-    cout<<"\t\t\t\t\t\t\t";
+    	cout<<"\t\t\t\t\t\t\t";
 	cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
 	ifstream ifs("fd.txt");
 	if(!ifs)
@@ -578,8 +577,8 @@ void Banking::fd_display()
 	}
 	while(ifs.read((char*)&f,sizeof(Banking)))
 	{
-	    cout<<"\n------------------------------------";
-	    cout<<"\nFD Account Number:\t\t\t"<<fd_no;
+	    	cout<<"\n------------------------------------";
+	    	cout<<"\nFD Account Number:\t\t\t"<<fd_no;
 		cout<<"\nAccount Holder Name:\t\t\t"<<name;
 		cout<<"\nNominee Name:\t\t\t\t"<<nom;			
 		cout<<"\nAADHAR Number:\t\t\t\t"<<adhr;						
@@ -599,7 +598,7 @@ void Banking::fd_delete()
 	system("cls");
 	int ch_7,fd_no1,flag=0;
 	cout<<"\t\t\t====================FD ACCOUNT DELETION SECTION====================\n\n";
-    cout<<"\t\t\t\t\t\t";
+    	cout<<"\t\t\t\t\t\t";
 	cout<<" Date- "<<__DATE__<<" \t "<<" Time- "<<__TIME__<<"\n\n";
 	ofstream ofs("temp.txt");
 	ifstream ifs("fd.txt");
@@ -636,11 +635,11 @@ void Banking::fd_delete()
 
 void Banking::add1()
 {
-	system("cls");
+    system("cls");
     cout<<"\t\t\t======================ADD EMPLOYEE RECORD SECTION=====================\n\n";
     cout<<"\t\t\t\t\t\t\t";
-	cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
-	ofstream ofs("emp.txt",ios::app);
+    cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
+    ofstream ofs("emp.txt",ios::app);
     cout<<"1- Enter Employee ID: ";
     cin>>emid;
     fflush(stdin);
@@ -665,12 +664,12 @@ void Banking::add1()
 
 void Banking::search1()
 {
-	int emid1,flag=0;
+    int emid1,flag=0;
     system("cls");
     cout<<"\t\t\t===================EMPLOYEES SEARCH RECORD SECTION====================\n\n";
     cout<<"\t\t\t\t\t\t\t";
-	cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
-	ifstream ifs("emp.txt");
+    cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
+    ifstream ifs("emp.txt");
     if(!ifs)
     {
         cout<<"\nFile not found";
@@ -707,8 +706,8 @@ void Banking::display1()
     system("cls");
     cout<<"\t\t\t======================DISPLAY EMPLOYEES RECORD SECTION======================\n\n";
     cout<<"\t\t\t\t\t\t\t";
-	cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
-	ifstream ifs("emp.txt");
+    cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
+    ifstream ifs("emp.txt");
     if(!ifs)
     {
         cout<<"\nFile not found";
@@ -726,8 +725,8 @@ void Banking::display1()
         cout<<"\nEmail Id: "<<email;
         cout<<"\nBlood Group: "<<ebg;
         cout<<"\nDesignation: "<<ed;
-		cout<<"\n\nNet Salary withdrawn= Rs. "<<t_net;  
- 		cout<<"\n------------------------------------";
+	cout<<"\n\nNet Salary withdrawn= Rs. "<<t_net;  
+ 	cout<<"\n------------------------------------";
         getch();
     }
     ifs.close();
@@ -739,8 +738,8 @@ void Banking::modify1()
     int emid2,ch_8,flag=0;
     cout<<"\t\t\t======================MODIFY EMPLOYEES RECORD SECTION======================\n\n";
     cout<<"\t\t\t\t\t\t\t";
-	cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
-	ofstream ofs("temp1.txt");
+    cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
+    ofstream ofs("temp1.txt");
     ifstream ifs("emp.txt");
     if(!ifs)
     {
@@ -768,36 +767,28 @@ void Banking::modify1()
             fflush(stdin);
             switch(ch_8)
             {
-                case 1:
-                		cout<<"\nModify Employee Name: ";
+                case 1:		cout<<"\nModify Employee Name: ";
                 		gets(ename);
                 		break;
-                case 2:
-                		cout<<"\nChange Gender: ";
+                case 2:         cout<<"\nChange Gender: ";
                 		gets(egen);
                 		break;
-                case 3:
-                		cout<<"\nChange Date of Birth: ";
+                case 3:         cout<<"\nChange Date of Birth: ";
                 		gets(edob);
                 		break;
-                case 4:
-                		cout<<"\nChange Contact Number: ";
+                case 4:         cout<<"\nChange Contact Number: ";
             			gets(ecno);
                 		break;
-                case 5:
-                		cout<<"\nChange Email Id: ";
+                case 5:         cout<<"\nChange Email Id: ";
                 		gets(email);
                 		break;
-                case 6:
-                		cout<<"\nModify Blood group: ";
+                case 6:         cout<<"\nModify Blood group: ";
                 		gets(ebg);
                 		break;
-                case 7:
-                		cout<<"\nEnter new Designation: ";
+                case 7:         cout<<"\nEnter new Designation: ";
                 		gets(ed);
                 		break;
-                default:
-                		cout<<"\nInvalid Choice";
+                default:        cout<<"\nInvalid Choice";
                 		exit(0);
             }
             ofs.write((char*)&e,sizeof(Banking));
@@ -823,8 +814,8 @@ void Banking::del1()
     int emid3,flag=0;
     cout<<"\t\t\t====================DELETE EX-EMPLOYEES RECORD SECTION====================\n\n";
     cout<<"\t\t\t\t\t\t";
-	cout<<" Date- "<<__DATE__<<" \t "<<" Time- "<<__TIME__<<"\n\n";
-	ofstream ofs("temp1.txt");
+    cout<<" Date- "<<__DATE__<<" \t "<<" Time- "<<__TIME__<<"\n\n";
+    ofstream ofs("temp1.txt");
     ifstream ifs("emp.txt");
     if(!ifs)
     {
@@ -863,8 +854,8 @@ void Banking::salary()
     system("cls");
     cout<<"\t\t\t====================SALARY RECORD SECTION====================\n\n";
     cout<<"\t\t\t\t\t\t";
-	cout<<" Date- "<<__DATE__<<" \t "<<" Time- "<<__TIME__<<"\n\n";
-	ofstream ofs("temp1.txt");
+    cout<<" Date- "<<__DATE__<<" \t "<<" Time- "<<__TIME__<<"\n\n";
+    ofstream ofs("temp1.txt");
     ifstream ifs("emp.txt");
     if(!ifs)
     {
@@ -884,16 +875,20 @@ void Banking::salary()
             cin>>bs;
             cout<<"\nEnter Month from (1-12) to generate salary report: ";
             cin>>month;
-            if(month==2){
+            if(month==2)
+	    {
           	no_of_days=28;
     	       	cout<<"\nEnter number of working days (0-28): ";
          	cin>>working_days;
-		}else if(month==4||month==6||month==9||month==11){
+	    }
+	    else if(month==4||month==6||month==9||month==11)
+	    {
 		no_of_days=30;
 		cout<<"\nEnter number of working days (0-30): ";
             	cin>>working_days;
-		}
-		else{
+	    }
+	    else
+	    {
 		no_of_days=31;
 		cout<<"\nEnter number of working days (0-31): ";
             	cin>>working_days;
@@ -965,45 +960,46 @@ int main()
     			system("cls");
         		cout<<"\t\t\t=====================WELCOME TO BANKING MANAGEMENT SYSTEM=====================\n\n";
         		cout<<"\t\t\t\t\t\t\t\t";
-				cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n";
-				cout<<"\n\t\t\t1- Add new bank account:";
+			cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n";
+			cout<<"\n\t\t\t1- Add new bank account:";
         		cout<<"\n\t\t\t2- Search existing accounts:";	
         		cout<<"\n\t\t\t3- Display all (savings/current) accounts:";	
         		cout<<"\n\t\t\t4- Modify existing accounts:";
         		cout<<"\n\t\t\t5- Transaction details:";
         		cout<<"\n\t\t\t6- Delete non-existing account Holders:";
         		cout<<"\n\t\t\t7- Fixed Deposit accounts Section:";      
-				cout<<"\n\t\t\t8- Exit:";
+			cout<<"\n\t\t\t8- Exit:";
         		cout<<"\n\t\t\tEnter your choice (1-8): ";
         		cin>>b_ch;
     			switch(b_ch)
     			{
 	    			case 1: b.add();
-	   						break;
+	   				break;
 	    			case 2: b.search();
-	   						break;
+	   				break;
 	    			case 3: b.display();
-				    		break;
+				    	break;
 	    			case 4: b.modify();
 	    		    		break;
 	    			case 5: b.trans();
-	        				break;
+	        			break;
         			case 6: b.del();
-	        				break;
+	        			break;
 	    			case 7: f.fd();
-	    					break;
-					case 8:cout<<"\n\nTHANK YOU..!!\nFor using our BANKING MANAGEMENT SYSTEM";
+	    				break;
+				case 8: cout<<"\n\nTHANK YOU..!!\nFor using our BANKING MANAGEMENT SYSTEM";
 					exit(0);  
-				}
-					cout<<"\n\nDo you want to continue again....(Press Y or N): ";
+			}
+				cout<<"\n\nDo you want to continue again....(Press Y or N): ";
     				cin>>ch1;
-    		}while(ch1=='y'||ch1=='Y');
-		}else cout<<"\n\nWrong Password Entered........!!";
+    			}while(ch1=='y'||ch1=='Y');
+		}
+		else cout<<"\n\nWrong Password Entered........!!";
 		exit(0);
-    }
-    else if(login==2)
-    {
-    	fflush(stdin);
+	}
+	else if(login==2)
+	{
+    		fflush(stdin);
 		cout<<"\n\n\t\tUser ID: ";
 		gets(e_id);
 		cout<<endl;
@@ -1020,7 +1016,7 @@ int main()
 			do
 			{
 				system("cls");
-        		cout<<"\t\t\t=====================BANK EMPLOYEE RECORD SECTION=====================\n\n";
+        			cout<<"\t\t\t=====================BANK EMPLOYEE RECORD SECTION=====================\n\n";
 				cout<<"\t\t\t\t\t\t\t";
 				cout<<"Date- "<<__DATE__<<"\t"<<"Time- "<<__TIME__<<"\n\n";
 				cout<<"\t\t\t1- Add New Bank Employee:";
@@ -1048,10 +1044,13 @@ int main()
 					break;
 					case 7: cout<<"\n\nTHANK YOU..!!\nFor using our BANKING MANAGEMENT SYSTEM";
 					exit(0); 
-				}	cout<<"\n\nDo you want to continue again....(Press Y or N): ";
+				}	
+				cout<<"\n\nDo you want to continue again....(Press Y or N): ";
     				cin>>ch2;
-    		}while(ch2=='y'||ch2=='Y');
-		}else cout<<"\n\nWrong Password Entered........!!";
+    			}while(ch2=='y'||ch2=='Y');
+		}
+		else cout<<"\n\nWrong Password Entered........!!";
 		exit(0);
-	}else cout<<"\n Invalid Choice........!! \nPlease Try Again.....";
+	}
+	else cout<<"\n Invalid Choice........!! \nPlease Try Again.....";
 }	
