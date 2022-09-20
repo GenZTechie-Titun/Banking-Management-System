@@ -531,35 +531,35 @@ void Banking::fd_create()
 	    cout<<"\n6- Account Type: ";
 	    cout<<"Fixed Deposit\n\n";
 	    cout<<"\t\t\t=========================FIXED DEPOSIT SCHEMES===========================\n\n";
-	        cout<<"\n\t\t\tInterest  Rates\t\t\t\tTime Duration\n";
-	        cout<<"\n\t\t\t\t4%\t\t\t\tLess than 12 months";
-		cout<<"\n\t\t\t\t5%\t\t\t\tMore than 12 months but less than 24 months";
-		cout<<"\n\t\t\t\t6%\t\t\t\tMore than 24 months but less than 60 months";
-		cout<<"\n\t\t\t\t7.5%\t\t\t\tMore than than 60 months";
-		cout<<"\n\nEnter Deposit Amount: Rs. ";	
-		cin>>fd_amt;
-		cout<<"\n\nEnter Time (in months): ";
-		cin>>month;
-		if(month<=12)
-		{
-		rate=0.04;
-		}
-		else if(month>12 && month<=24)
-		{
-		rate=0.05;
-		}
-		else if(month>24 && month<=60)
-		{
-		rate=0.06;
-		}
-		else rate=0.075;
-    	interest=fd_amt*rate;
+	    cout<<"\n\t\t\tInterest  Rates\t\t\t\tTime Duration\n";
+	    cout<<"\n\t\t\t\t4%\t\t\t\tLess than 12 months";
+            cout<<"\n\t\t\t\t5%\t\t\t\tMore than 12 months but less than 24 months";
+	    cout<<"\n\t\t\t\t6%\t\t\t\tMore than 24 months but less than 60 months";
+	    cout<<"\n\t\t\t\t7.5%\t\t\t\tMore than than 60 months";
+	    cout<<"\n\nEnter Deposit Amount: Rs. ";	
+	    cin>>fd_amt;
+	    cout<<"\n\nEnter Time (in months): ";
+            cin>>month;
+	    if(month<=12)
+	    {
+	    rate=0.04;
+	    }
+	    else if(month>12 && month<=24)
+	    {
+	    rate=0.05;
+	    }
+	    else if(month>24 && month<=60)
+	    {
+	    rate=0.06;
+	    }
+	    else rate=0.075;
+   	interest=fd_amt*rate;
 	m_amt=interest+fd_amt;
 	cout<<"\n\nInterest Rate: "<<rate*100<<"%";
 	cout<<"\n\n\nMaturity Amount= Rs. "<<m_amt;		
-    ofs.write((char *)&f,sizeof(Banking));
-    cout<<"\n\nCongratulations!! \nFixed Deposit Account created Successfully....";
-    ofs.close();
+ 	ofs.write((char *)&f,sizeof(Banking));
+   	cout<<"\n\nCongratulations!! \nFixed Deposit Account created Successfully....";
+    	ofs.close();
 }
 
 void Banking::fd_display()
